@@ -1,4 +1,4 @@
-# LeCoOp
+# LeCo-op
 
 A from-scratch implementation of **LeWorldModel (LeWM)**, a JEPA world model
 ([arXiv 2603.19312](https://arxiv.org/abs/2603.19312)), applied to the co-op
