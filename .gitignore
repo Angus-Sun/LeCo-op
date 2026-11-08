@@ -1,0 +1,26 @@
+# game files (not ours to redistribute)
+game/*
+!game/.gitkeep
+
+# recorded data / datasets
+data/*
+!data/.gitkeep
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# checkpoints, logs, misc run artifacts
+checkpoints/
+runs/
+wandb/
+*.log
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+CLAUDE.md
