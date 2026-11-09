@@ -9,7 +9,7 @@ OUT_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 
 def main() -> None:
     num_episodes = int(sys.argv[1]) if len(sys.argv) > 1 else 5
-    env = FireboyWatergirlEnv(LEVEL_URL, headless=True)
+    env = FireboyWatergirlEnv(LEVEL_URL, headless=False)
     try:
         collect_episodes(env, OUT_DIR, num_episodes)
     finally:

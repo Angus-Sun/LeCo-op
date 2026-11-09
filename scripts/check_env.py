@@ -3,12 +3,6 @@ env, saves the first frame, takes a few random steps, saves the last frame.
 Look at the saved PNGs to check reset() actually landed in gameplay (not a
 menu) and that characters are visibly moving between the two screenshots.
 
-Runs headless on purpose — a visible (headless=False) window showed visual
-jitter that turned out to be a Chromium window-manager artifact, not a real
-issue with the captured frame data (confirmed by tracing frame-to-frame
-pixel diffs, which stayed small and steady throughout). Checking saved
-frames is more reliable than watching the live window.
-
 Usage: python scripts/check_env.py
 """
 
@@ -28,7 +22,7 @@ OUT_DIR = Path(__file__).resolve().parent.parent / "data" / "env_check"
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    env = FireboyWatergirlEnv(LEVEL_URL, headless=True)
+    env = FireboyWatergirlEnv(LEVEL_URL, headless=False)
     try:
         frame = env.reset()
         Image.fromarray(frame).save(OUT_DIR / "00_reset.png")

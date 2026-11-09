@@ -23,7 +23,7 @@ def main() -> None:
     rng = np.random.default_rng(0)
     policy = StickyRandomPolicy(rng)
 
-    env = FireboyWatergirlEnv(LEVEL_URL, headless=True)
+    env = FireboyWatergirlEnv(LEVEL_URL, headless=False)
     try:
         frame = env.reset()
         Image.fromarray(frame).save(OUT_DIR / "step_000.png")
